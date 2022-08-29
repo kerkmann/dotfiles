@@ -47,3 +47,13 @@ R = function(name)
   reloader.reload_module(name)
   return require(name)
 end
+
+T = function()
+  local async = require "plenary.async"
+  local tx, rx = async.control.channel.oneshot()
+  async.run(vim.ui.input({ prompt = "Enter input: " }, function(input)
+    tx(input)
+  end))
+  P(rx())
+  print("LUL")
+end
