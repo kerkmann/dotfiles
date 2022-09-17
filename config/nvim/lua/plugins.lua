@@ -101,6 +101,8 @@ require("packer").startup {
         "nvim-lua/plenary.nvim",
       },
     }
+    use "rebelot/heirline.nvim"
+
     -- use {
     --   'glepnir/galaxyline.nvim',
     --   requires = { "kyazdani42/nvim-web-devicons", opt = true }
